@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --Red: hsl(0, 78%, 62%);
+--Cyan: hsl(180, 62%, 55%);
+--Orange: hsl(34, 97%, 64%);
+--Blue: hsl(212, 86%, 64%);
+
+/* ### Neutral */
+
+--Very-Dark-Blue: hsl(234, 12%, 34%);
+--Grayish-Blue: hsl(229, 6%, 66%);
+--Very-Light-Gray: hsl(0, 0%, 98%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    margin: 60px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--Very-Light-Gray);
+}
+.container {
+    text-align: center;
+    margin: 0 10px;
+}
+div > .reliable {
+    font-weight: 200;
+    color: var(--Very-Dark-Blue);
+}
+div > .power {
+    color: var(--Very-Dark-Blue);
+    font-weight: bold;
+}
+div > p{
+    width: 550px;
+    padding: 10px 0;
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+}
+.box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 0.5fr);
+    grid-gap: 20px;
+   margin: 40px 40px 0 40px;
+   
+}
+.box .first {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    border-top: 5px solid var(--Cyan);
+    box-shadow: 0px 17px 18px 8px rgba(0,0,0,0.1);
+    
+}
+.box .two {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    border-top: 5px solid var(--Red);
+    box-shadow: 0px 17px 18px 8px rgba(0,0,0,0.1);
+}
+.box .three {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    border-top: 5px solid var(--Blue);
+    box-shadow: 0px 17px 18px 8px rgba(0,0,0,0.1);
+}
+.box .four {
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    border-top: 5px solid var(--Orange);
+    box-shadow: 0px 17px 18px 8px rgba(0,0,0,0.1);
+}
+.box .a h1{
+    color: var(--Very-Dark-Blue);
+}
+.box .a p{
+    width: 90%;
+    padding-bottom: 10px;
+
+}
+.box .a img{
+    float: right;
+    margin: 10px 0;
+}
+.box .first {
+    grid-row: 2/4;
+    animation: fadeInLeft 1s ease forwards;
+}
+.box .two {
+    animation: fadeInFromUnder 1s ease forwards;
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+.box .three{
+    grid-row: 2/4;
+    grid-column: 3/4;
+    animation: fadeInFromRight 1s ease forwards;
+}
+.box .four{
+    grid-column: 2/3;
+    grid-row: 3/5;
+    animation: fadeInFromUnder 1s ease forwards;
+}
+/* animation  */
+@keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes fadeInFromUnder {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeInFromRight {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@media screen and (max-width: 900px){
+    .box .first {
+        grid-row: 1/2;
+        grid-column: 1/4;
+    }
+    .box .two {
+       
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+    .box .three{
+        grid-row: 3/4;
+        grid-column: 1/4;
+    }
+    .box .four{
+        grid-column: 1/4;
+        grid-row: 4/5;
+    }
+    div > p{
+    width: auto;
+    font-size: 14px;
+    } 
+    div > .reliable {
+        font-size: 25px;
+    }
+    div > .power {
+        font-size: 25px;
+    }
+}
